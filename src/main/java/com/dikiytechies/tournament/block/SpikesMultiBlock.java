@@ -46,6 +46,11 @@ public class SpikesMultiBlock extends Block {
     }
 
     @Override
+    public void stepOn(World p_176199_1_, BlockPos p_176199_2_, Entity p_176199_3_) {
+        super.stepOn(p_176199_1_, p_176199_2_, p_176199_3_);
+    }
+
+    @Override
     public void entityInside(BlockState blockState, World world, BlockPos blockPos, Entity entity) {
         if (!entity.isInvulnerableTo(DamageSource.CACTUS)) {
             if (entity instanceof LivingEntity && entity.isAlive()) {
