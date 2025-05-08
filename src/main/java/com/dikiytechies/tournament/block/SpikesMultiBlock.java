@@ -25,6 +25,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
@@ -52,7 +53,7 @@ public class SpikesMultiBlock extends Block {
 
     @Override
     public void entityInside(BlockState blockState, World world, BlockPos blockPos, Entity entity) {
-        if (!entity.isInvulnerableTo(DamageSource.CACTUS)) {
+        if (!entity.isInvulnerableTo(DamageSource.CACTUS) && Math.ceil(entity.position().y()) == blockPos.above().getY() && blockState.getValue(HALF) == DoubleBlockHalf.UPPER) {
             if (entity instanceof LivingEntity && entity.isAlive()) {
                 LivingEntity living = (LivingEntity) entity;
                 if (HamonUtil.preventBlockDamage(living, world, blockPos, blockState, DamageSource.CACTUS, 1.0f)) return;
