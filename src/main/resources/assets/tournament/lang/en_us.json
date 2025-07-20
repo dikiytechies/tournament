@@ -1,5 +1,6 @@
 {
   "block.tournament.spikes": "Spikes",
   "block.tournament.tile": "Tile",
-  "block.tournament.light_bulb": "Light Bulb"
+  "block.tournament.light_bulb": "Light Bulb",
+  "block.tournament.fake_spikes": "Fake Spikes"
 }

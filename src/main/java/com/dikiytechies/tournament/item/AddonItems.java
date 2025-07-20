@@ -18,4 +18,6 @@ public class AddonItems {
             () -> new BlockItem(AddonBlocks.TILE.get(), new Item.Properties().tab(ModItems.MAIN_TAB)));
     public static final RegistryObject<BlockItem> LIGHT_BULB = ITEMS.register("light_bulb",
             () -> new BlockItem(AddonBlocks.LIGHT_BULB.get(), new Item.Properties().tab(ModItems.MAIN_TAB)));
+    public static final RegistryObject<BlockItem> FAKE_SPIKES = ITEMS.register("fake_spikes",
+            () -> new BlockItem(AddonBlocks.FAKE_SPIKES.get(), new Item.Properties().tab(ModItems.MAIN_TAB)));
 }

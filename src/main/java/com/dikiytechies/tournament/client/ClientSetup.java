@@ -17,6 +17,7 @@ public class ClientSetup {
         Minecraft mc = event.getMinecraftSupplier().get();
         event.enqueueWork(() -> {
             RenderTypeLookup.setRenderLayer(AddonBlocks.SPIKES.get(), RenderType.cutoutMipped());
+            RenderTypeLookup.setRenderLayer(AddonBlocks.FAKE_SPIKES.get(), RenderType.cutoutMipped());
         });
     };
 }

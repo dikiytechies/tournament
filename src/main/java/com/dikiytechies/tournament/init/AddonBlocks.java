@@ -1,6 +1,7 @@
 package com.dikiytechies.tournament.init;
 
 import com.dikiytechies.tournament.AddonMain;
+import com.dikiytechies.tournament.block.FakeSpikesMultiBlock;
 import com.dikiytechies.tournament.block.LightBulbBlock;
 import com.dikiytechies.tournament.block.SpikesMultiBlock;
 import net.minecraft.block.AbstractBlock;
@@ -22,4 +23,7 @@ public class AddonBlocks {
             () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.SAND).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
     public static final RegistryObject<LightBulbBlock> LIGHT_BULB = BLOCKS.register("light_bulb",
             () -> new LightBulbBlock(AbstractBlock.Properties.of(Material.DECORATION).instabreak().lightLevel((light) -> { return 15; }).noOcclusion()));
+    public static final RegistryObject<FakeSpikesMultiBlock> FAKE_SPIKES = BLOCKS.register("fake_spikes",
+            () -> new FakeSpikesMultiBlock(AbstractBlock.Properties.of(Material.METAL).harvestLevel(2).requiresCorrectToolForDrops()
+                    .harvestTool(ToolType.PICKAXE).strength(6f).lootFrom(SPIKES)));
 }
