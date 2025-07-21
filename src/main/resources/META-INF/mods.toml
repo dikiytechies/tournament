@@ -35,6 +35,12 @@ authors="dikiytechies" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
 A tournament for Ripples of the Past mod.
+
+That music disc guys:
+Bub8les,
+KennyTheLyr1c1st, RagamuffinWLYR,
+zebuez, MythicApex,
+TrikiTr0y.
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.tournament]] #optional

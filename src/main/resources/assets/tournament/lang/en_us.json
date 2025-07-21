@@ -2,5 +2,8 @@
   "block.tournament.spikes": "Spikes",
   "block.tournament.tile": "Tile",
   "block.tournament.light_bulb": "Light Bulb",
-  "block.tournament.fake_spikes": "Fake Spikes"
+  "block.tournament.fake_spikes": "Fake Spikes",
+
+  "item.tournament.assgore_disc": "Music Disc",
+  "item.tournament.assgore_disc.desc": "KennyTheLyr1c1st - BERGENTRÜCK"
 }

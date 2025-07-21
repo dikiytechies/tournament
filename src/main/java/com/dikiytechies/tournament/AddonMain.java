@@ -1,6 +1,7 @@
 package com.dikiytechies.tournament;
 
 import com.dikiytechies.tournament.init.AddonBlocks;
+import com.dikiytechies.tournament.init.AddonSounds;
 import com.dikiytechies.tournament.item.AddonItems;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -23,5 +24,6 @@ public class AddonMain {
     private void initVanillaRegistries(IEventBus modEventBus) {
         AddonBlocks.BLOCKS.register(modEventBus);
         AddonItems.ITEMS.register(modEventBus);
+        AddonSounds.SOUNDS.register(modEventBus);
     }
 }

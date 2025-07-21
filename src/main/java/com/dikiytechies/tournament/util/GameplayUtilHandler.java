@@ -2,6 +2,8 @@ package com.dikiytechies.tournament.util;
 
 import com.dikiytechies.tournament.AddonMain;
 import com.dikiytechies.tournament.init.AddonBlocks;
+import com.dikiytechies.tournament.init.AddonSounds;
+import com.dikiytechies.tournament.item.AddonItems;
 import com.github.standobyte.jojo.capability.entity.LivingUtilCapProvider;
 import com.github.standobyte.jojo.init.ModSounds;
 import com.github.standobyte.jojo.init.power.non_stand.ModPowers;
@@ -9,17 +11,22 @@ import com.github.standobyte.jojo.potion.BleedingEffect;
 import com.github.standobyte.jojo.power.impl.nonstand.INonStandPower;
 import com.github.standobyte.jojo.power.impl.nonstand.type.hamon.HamonUtil;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.item.ItemEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
+import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-import java.util.Optional;
-import java.util.OptionalInt;
+import java.util.*;
 
 import static com.github.standobyte.jojo.potion.BleedingEffect.splashBlood;
 
@@ -50,6 +57,18 @@ public class GameplayUtilHandler {
                 }
                 event.setDamageMultiplier(event.getDamageMultiplier() * 2f);
             }
+        }
+    }
+    private static final List<String> recordPlayers = Arrays.asList("August_dr, Pr1tcha, iIIiBlackiIIi");
+    @SubscribeEvent(priority = EventPriority.LOW)
+    public static void discDrop(LivingDropsEvent event) {
+        LivingEntity living = event.getEntityLiving();
+        if (living instanceof ServerPlayerEntity) {
+            ServerPlayerEntity player = (ServerPlayerEntity) living;
+            String nickname = player.getGameProfile().getName();
+            for (String entry : recordPlayers)
+                if (entry.equals(nickname))
+                    event.getDrops().add(new ItemEntity(player.level, player.getX(), player.getY(), player.getZ(), new ItemStack(AddonItems.ASSGORE_RECORD.get(), 1)));
         }
     }
 }
